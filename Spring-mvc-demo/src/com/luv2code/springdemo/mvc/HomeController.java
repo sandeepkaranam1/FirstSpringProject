@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/hello")
 public class HomeController  {
 
 	@RequestMapping("/")
@@ -35,6 +37,14 @@ public class HomeController  {
 		String theName=request.getParameter("studentname");
 		theName=theName.toUpperCase();
 		theName="I love you "+theName;
+		model.addAttribute("message",theName);
+		return "helloworld";
+	}
+	
+	@RequestMapping("/processForm3")
+	public String processForm3(@RequestParam("studentname")String theName,Model model)
+	{
+		theName="As it is :"+theName.toUpperCase();
 		model.addAttribute("message",theName);
 		return "helloworld";
 	}
