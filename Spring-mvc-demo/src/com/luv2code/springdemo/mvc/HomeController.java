@@ -10,14 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/hello")
+@RequestMapping("hello")
 public class HomeController  {
 
-	@RequestMapping("/")
+	@RequestMapping("defaultview")
 	public String showPage()
 	{
 		return "main-menu";
 	}
+	 
+	   
 	
 	@RequestMapping("/showform")
 	public String showForm()

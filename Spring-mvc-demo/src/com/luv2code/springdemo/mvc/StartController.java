@@ -1,16 +1,15 @@
 package com.luv2code.springdemo.mvc;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class SillyController {
+public class StartController {
 
-	@RequestMapping("/showform")
-	public String display()
+	@RequestMapping("/")
+	public String showPage()
 	{
-		return "index";
-		
+		return "main-menu";
 	}
+	
 }
